@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Montserrat:wght@300&display=swap');
+
+    :root {
+  --primary-400: hsl(158, 36%, 37%);
+  --secondary-200: hsl(30, 38%, 92%);
+
+  --neutral-900: hsl(212, 21%, 14%);
+  --neutral-400: hsl(228, 12%, 48%);
+  --neutral-100: hsl(0, 0%, 100%);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --ff-accent: 'Fraunces', sans-serif;
+  --ff-base: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--secondary-200);
+  font-family: var(--ff-base);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 0 30px;
+
+}
+
+.card {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--neutral-100);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: inherit;
+}
+
+.product-content {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h6 {
+  color: var(--neutral-400);
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+h1 {
+  font-family: var(--ff-accent);
+  padding-bottom: 30px;
+  line-height: 1em;
+}
+
+p {
+  color: var(--neutral-400);
+  text-align: start;
+  padding-bottom: 30px;
+}
+
+.info-card {
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.product-price {
+  color: var(--primary-400);
+  font-size: 28px;
+  font-weight: 600;
+  font-family: var(--ff-accent);
+  padding-right: 20px;
+}
+
+.product-origninal-price {
+  text-decoration: line-through;
+}
+
+
+button {
+  background-color: var(--primary-400);
+  color: var(--neutral-100);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .3s ease-in;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.icon {
+  padding-right: 3px;
+}
+
+.btn:hover  {
+  background-color: hsl(158, 36%, 23%);
+}
+
+@media only screen and (max-width: 628px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .product-content {
+    display: block;
+  }
+
+  h6,
+  h1,
+  p,
+  .info-card {
+    padding-bottom: 23px;
+  }
+}
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="product-image">
+        <img src="images/image-product-desktop.jpg">
+      </div>
+    
+      <div class="product-content">
+        <h6 class="product-category">Perfum</h6>
+  
+        <h1>Gabrielle <br> Essence Eau <br> De Parfum</h1>
+    
+        <p>
+          A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+          Perfumer-Creator for the House of CHANEL.
+        </p>
+  
+        <div class="info-card">
+          <div class="product-price">$149.99</div>
+          <div class="product-origninal-price">$169.99</div>
+        </div>
+  
+  
+        <button class="btn">
+          <img src="images/icon-cart.svg" class="icon">
+          <div class="text">Add to Cart</div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
